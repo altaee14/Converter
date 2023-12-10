@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Converter.MainPage"
+             xmlns:local="clr-namespace:Converter.ViewModel"
+             x:DataType="local:ConverterViewModel">
+             
+ 
+        <Grid RowDefinitions="50, 40, 20, *, 40, 40, 40"
+              ColumnDefinitions="100, 100, *"
+              RowSpacing="10"
+              ColumnSpacing="10"
+              VerticalOptions="Center"
+              HorizontalOptions="Center"
+              >
+        <Entry Grid.Column="0"
+               Grid.Row="0" Grid.ColumnSpan="2"
+               Placeholder="Enter num"
+               PlaceholderColor="LightSlateGray"
+               VerticalTextAlignment="End"
+               
+               x:Name="firstEntry"
+               Text="{Binding NumberIN}"
+               />
+        <Picker Grid.Row="1"
+                Grid.Column="0" x:Name="Valute1"
+                SelectedIndex="{Binding Picker1}">
+            <Picker.Items>
+                <x:String>Рубль</x:String>
+                <x:String>Доллар</x:String>
+                <x:String>Юань</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker Grid.Row="1"
+                Grid.Column="1"
+                SelectedIndex="{Binding Picker2}">
+            <Picker.Items>
+                <x:String>Рубль</x:String>
+                <x:String>Доллар</x:String>
+                <x:String>Юань</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Grid.Column="0"
+       Grid.Row="2"
+         Text="="
+        />
+        <Label Grid.Column="1"
+        Grid.Row="2" 
+        Text="{Binding NumberOUT}"
+        />
+       
+        <Button Text="Convert"
+                Grid.Column="0"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Black" 
+                BorderColor="White"
+                TextColor="White"
+                Command="{Binding ConverteCommand}"
+                x:Name="Converte_btn"
+                />
+            
+        <Label Grid.Column="0"
+               Text="1 USD - 91.60 RUB"
+               FontSize="12"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               Grid.Row="4"
+               TextColor="Gray"
+               BackgroundColor="Black"
+              
+               />
+         <Label Grid.Column="0"
+                Text="1 CNY - 12.79 RUB"
+                FontSize="12"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                Grid.Row="5"
+                TextColor="Gray"
+                BackgroundColor="Black"
+                
+                />
+        <Label Grid.Column="0"
+                 Text="1 USD - 7.17 CNY"
+                 FontSize="12"
+                 Grid.ColumnSpan="2"
+                 HorizontalOptions="Center"
+                 Grid.Row="6"
+                 TextColor="Gray"
+                 BackgroundColor="Black"
+                 />
+    </Grid>
+</ContentPage>
